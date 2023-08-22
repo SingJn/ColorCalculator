@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-enum SelectedOperator {
-    case plus
-    case minus
-    case muliply
-    case divide
-    case equal
+enum SelectedOperator: String {
+    case plus = "+"
+    case minus = "–"
+    case muliply = "×"
+    case divide = "÷"
+    case equal = "="
 }
 
 struct ContentView: View {
@@ -55,6 +55,7 @@ struct ContentView: View {
                     numButton("4")
                     numButton("5")
                     numButton("6")
+                    ///키보드 상의 하이픈(-)이 아니라 en dash(–)임
                     operatorButton("–")
                 }
                 
@@ -106,18 +107,8 @@ struct ContentView: View {
         case "×": return .muliply
         case "-": return .minus
         case "+": return .plus
-        case "": return .equal
+        case "=": return .equal
         default: return .equal
-        }
-    }
-    
-    private func selectedOperatorToString(_ selectedOperator: SelectedOperator) -> String {
-        switch selectedOperator {
-        case .divide: return "÷"
-        case .muliply: return "×"
-        case .minus: return "-"
-        case .plus: return "+"
-        case .equal: return "="
         }
     }
     
@@ -179,6 +170,7 @@ struct ContentView: View {
                 .foregroundColor(.white)
                 .font(.system(size: 120))
                 .offset(y: 60)
+                .minimumScaleFactor(0.5)
             //                        .font(Font.custom("ByockdolSmall-Regular", size: 110))
         }
         .padding(.trailing)
@@ -240,7 +232,7 @@ struct ContentView: View {
             print("baseN: \(baseNumber), ")
             
         } label: {
-            if(name == selectedOperatorToString(selectedOperator) && name != "=") {
+            if(name == selectedOperator.rawValue && name != "=") {
                 Text(name)
                     .frame(width: 80, height: 80)
                     .font(.system(size: 60))
