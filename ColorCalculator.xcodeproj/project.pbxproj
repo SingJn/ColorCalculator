@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE327EF52A8D0B3B00D7483D /* ByockdolSmall-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE327EF42A8D0B3B00D7483D /* ByockdolSmall-Regular.ttf */; };
 		DE8A09B92A8CED780045F8B4 /* ColorCalculatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A09B82A8CED780045F8B4 /* ColorCalculatorApp.swift */; };
 		DE8A09BB2A8CED780045F8B4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A09BA2A8CED780045F8B4 /* ContentView.swift */; };
 		DE8A09BD2A8CED7A0045F8B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE8A09BC2A8CED7A0045F8B4 /* Assets.xcassets */; };
@@ -14,11 +15,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DE327EF42A8D0B3B00D7483D /* ByockdolSmall-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ByockdolSmall-Regular.ttf"; path = "../../ByockdolSmall-Regular.ttf"; sourceTree = "<group>"; };
 		DE8A09B52A8CED780045F8B4 /* ColorCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE8A09B82A8CED780045F8B4 /* ColorCalculatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCalculatorApp.swift; sourceTree = "<group>"; };
 		DE8A09BA2A8CED780045F8B4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DE8A09BC2A8CED7A0045F8B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE8A09BF2A8CED7A0045F8B4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DE8A09C82A8CFAEA0045F8B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +54,10 @@
 		DE8A09B72A8CED780045F8B4 /* ColorCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				DE8A09C82A8CFAEA0045F8B4 /* Info.plist */,
 				DE8A09B82A8CED780045F8B4 /* ColorCalculatorApp.swift */,
 				DE8A09BA2A8CED780045F8B4 /* ContentView.swift */,
+				DE327EF42A8D0B3B00D7483D /* ByockdolSmall-Regular.ttf */,
 				DE8A09BC2A8CED7A0045F8B4 /* Assets.xcassets */,
 				DE8A09BE2A8CED7A0045F8B4 /* Preview Content */,
 			);
@@ -125,6 +130,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE327EF52A8D0B3B00D7483D /* ByockdolSmall-Regular.ttf in Resources */,
 				DE8A09C02A8CED7A0045F8B4 /* Preview Assets.xcassets in Resources */,
 				DE8A09BD2A8CED7A0045F8B4 /* Assets.xcassets in Resources */,
 			);
@@ -270,6 +276,7 @@
 				DEVELOPMENT_TEAM = 7DAR847RN7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ColorCalculator/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -299,6 +306,7 @@
 				DEVELOPMENT_TEAM = 7DAR847RN7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ColorCalculator/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
