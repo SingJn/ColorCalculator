@@ -68,7 +68,7 @@ struct ContentView: View {
                 
                 HStack {
                     numButton("0")
-                    numButton(".")
+                    numButton(heartSelecter())
                     operatorButton("=")
                 }
             }
@@ -76,11 +76,22 @@ struct ContentView: View {
         }
     }
     
-    private func numberViewer() -> String{
-        if(showDecimalMark) {
-            return numFormatter(baseNumber) + "."
+    private func heartSelecter() -> String {
+        if showDecimalMark {
+            return "♡"
+        } else {
+            return "♥︎"
         }
-        return numFormatter(baseNumber)
+    }
+    
+    private func numberViewer() -> String{
+        if(baseNumber <= 9999999999) {
+            if(showDecimalMark) {
+                return numFormatter(baseNumber) + "♥︎"
+            }
+            return numFormatter(baseNumber)
+        }
+        return "OverFlow"
     }
     
     private func actionCalculate(_ selectedOperator: SelectedOperator) -> Double {
@@ -105,7 +116,7 @@ struct ContentView: View {
         switch string {
         case "÷": return .divide
         case "×": return .muliply
-        case "-": return .minus
+        case "–": return .minus
         case "+": return .plus
         case "=": return .equal
         default: return .equal
@@ -170,8 +181,7 @@ struct ContentView: View {
                 .foregroundColor(.white)
                 .font(.system(size: 120))
                 .offset(y: 60)
-                .minimumScaleFactor(0.5)
-            //                        .font(Font.custom("ByockdolSmall-Regular", size: 110))
+                .minimumScaleFactor(0.3)
         }
         .padding(.trailing)
     }
@@ -180,7 +190,7 @@ struct ContentView: View {
     private func numButton(_ name: String) -> some View {
         
         Button {
-            if(name != ".") {
+            if(name != "♥︎") {
                 actionNumButton(Double(name) ?? 0)
                 showDecimalMark = false
             } else {
@@ -195,15 +205,6 @@ struct ContentView: View {
                     .offset(x: -48)
                     .background(.gray.opacity(0.5))
                     .foregroundColor(.white)
-                    .cornerRadius(80)
-                    .padding(5)
-            case ".":
-                Text(name)
-                    .font(.system(size: 50))
-                    .frame(width: 80, height: 80)
-                    .offset(x: 0)
-                    .background(.gray.opacity(0.2))
-                    .foregroundColor(.white.opacity(0.2))
                     .cornerRadius(80)
                     .padding(5)
             default:
