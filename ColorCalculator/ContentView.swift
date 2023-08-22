@@ -76,6 +76,25 @@ struct ContentView: View {
         }
     }
     
+    private func operatorPressed(_ name: String) {
+        if(name == "=") {
+            baseNumber = actionCalculate(lastSelectedOperator)
+        } else {
+            calculateNumber = 0
+            isSwitched = false
+        }
+        selectedOperator = stringToSelectedOperator(name)
+    }
+    
+    private func showHeart(_ name: String) {
+        if(name != "♥︎") {
+            actionNumButton(Double(name) ?? 0)
+            showDecimalMark = false
+        } else {
+            showDecimalMark.toggle()
+        }
+    }
+    
     private func heartSelecter() -> String {
         if showDecimalMark {
             return "♡"
@@ -190,12 +209,7 @@ struct ContentView: View {
     private func numButton(_ name: String) -> some View {
         
         Button {
-            if(name != "♥︎") {
-                actionNumButton(Double(name) ?? 0)
-                showDecimalMark = false
-            } else {
-                showDecimalMark.toggle()
-            }
+            showHeart(name)
         } label: {
             switch name {
             case "0":
@@ -223,15 +237,7 @@ struct ContentView: View {
     @ViewBuilder
     private func operatorButton(_ name: String) -> some View {
         Button {
-            if(name == "=") {
-                baseNumber = actionCalculate(lastSelectedOperator)
-            } else {
-                calculateNumber = 0
-                isSwitched = false
-            }
-            selectedOperator = stringToSelectedOperator(name)
-            print("baseN: \(baseNumber), ")
-            
+            operatorPressed(name)
         } label: {
             if(name == selectedOperator.rawValue && name != "=") {
                 Text(name)
