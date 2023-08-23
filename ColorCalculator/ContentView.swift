@@ -90,6 +90,58 @@ struct ContentView: View {
                     .cornerRadius(80)
                     .padding(5)
             }
+        case .seven:
+            Button {
+                calculatorVM.actionNumButton(name)
+            } label: {
+                Text(name.rawValue)
+                    .font(.system(size: 50))
+                    .frame(width: 80, height: 80)
+                    .background(.gray.opacity(0.5))
+                    .foregroundColor(.white)
+                    .cornerRadius(80)
+                    .padding(5)
+                    .kerning(-2)
+            }
+        case .five:
+            Button {
+                calculatorVM.actionNumButton(name)
+            } label: {
+                Text(name.rawValue)
+                    .font(.system(size: 50))
+                    .frame(width: 80, height: 80)
+                    .background(.gray.opacity(0.5))
+                    .foregroundColor(.white)
+                    .cornerRadius(80)
+                    .padding(5)
+                    .kerning(1)
+            }
+        case .four:
+            Button {
+                calculatorVM.actionNumButton(name)
+            } label: {
+                Text(name.rawValue)
+                    .font(.system(size: 50))
+                    .frame(width: 80, height: 80)
+                    .background(.gray.opacity(0.5))
+                    .foregroundColor(.white)
+                    .cornerRadius(80)
+                    .padding(5)
+                    .kerning(2.5)
+            }
+        case .one:
+            Button {
+                calculatorVM.actionNumButton(name)
+            } label: {
+                Text(name.rawValue)
+                    .font(.system(size: 50))
+                    .frame(width: 80, height: 80)
+                    .background(.gray.opacity(0.5))
+                    .foregroundColor(.white)
+                    .cornerRadius(80)
+                    .padding(5)
+                    .kerning(1.5)
+            }
         case .zero:
             Button {
                 calculatorVM.actionNumButton(name)
@@ -155,8 +207,9 @@ struct ContentView: View {
             } label: {
                 Text(name.rawValue)
                     .frame(width: 80, height: 80)
-                    .font(.system(size: 40))
+                    .font(.system(size: 38))
                     .fontWeight(.semibold)
+                    .baselineOffset(1)
                     .background(.white.opacity(0.8))
                     .foregroundColor(.black)
                     .cornerRadius(80)
@@ -171,7 +224,7 @@ struct ContentView: View {
                     .frame(width: 80, height: 80)
                     .font(.system(size: 57))
                     .fontWeight(.regular)
-                    .baselineOffset(8)
+                    .baselineOffset(9)
                     .background(.white.opacity(0.8))
                     .foregroundColor(.black)
                     .cornerRadius(80)
@@ -183,9 +236,9 @@ struct ContentView: View {
             } label: {
                 Text(name.rawValue)
                     .frame(width: 80, height: 80)
-                    .font(.system(size: 45))
-                    .fontWeight(.bold)
-                    .baselineOffset(0)
+                    .font(.system(size: 40))
+                    .fontWeight(.heavy)
+                    .baselineOffset(-1)
                     .background(.white.opacity(0.8))
                     .foregroundColor(.black)
                     .cornerRadius(80)
