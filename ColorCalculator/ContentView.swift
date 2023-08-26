@@ -18,46 +18,52 @@ struct ContentView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(.black)
             
-            VStack {
+            HStack {
                 Spacer()
                 
-                resultNumView()
-                
-                HStack {
-                    funcButton(.allClear)
-                    funcButton(.plusMinus)
-                    funcButton(.persent)
-                    operatorButton(.divide)
+                VStack(alignment: .trailing) {
+                    Spacer()
+                    
+                    resultNumView()
+                    
+                    HStack {
+                        funcButton(.allClear)
+                        funcButton(.plusMinus)
+                        funcButton(.persent)
+                        operatorButton(.divide)
+                    }
+                    
+                    HStack {
+                        numButton(.seven)
+                        numButton(.eight)
+                        numButton(.nine)
+                        operatorButton(.muliply)
+                    }
+                    
+                    HStack {
+                        numButton(.four)
+                        numButton(.five)
+                        numButton(.six)
+                        operatorButton(.minus)
+                    }
+                    
+                    HStack {
+                        numButton(.one)
+                        numButton(.two)
+                        numButton(.three)
+                        operatorButton(.plus)
+                    }
+                    
+                    HStack {
+                        numButton(.zero)
+                        numButton(.fillHeart)
+                        operatorButton(.equal)
+                    }
                 }
+                .padding()
                 
-                HStack {
-                    numButton(.seven)
-                    numButton(.eight)
-                    numButton(.nine)
-                    operatorButton(.muliply)
-                }
-                
-                HStack {
-                    numButton(.four)
-                    numButton(.five)
-                    numButton(.six)
-                    operatorButton(.minus)
-                }
-                
-                HStack {
-                    numButton(.one)
-                    numButton(.two)
-                    numButton(.three)
-                    operatorButton(.plus)
-                }
-                
-                HStack {
-                    numButton(.zero)
-                    numButton(.fillHeart)
-                    operatorButton(.equal)
-                }
+                Spacer()
             }
-            .padding()
         }
     }
     
@@ -148,7 +154,7 @@ struct ContentView: View {
             } label: {
                 Text(name.rawValue)
                     .font(.system(size: 50))
-                    .frame(width: 170, height: 80)
+                    .frame(width: 178, height: 80)
                     .offset(x: -48)
                     .background(.gray.opacity(0.5))
                     .foregroundColor(.white)
